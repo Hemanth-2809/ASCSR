@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0A1628"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="36dp"
+        android:paddingBottom="48dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="28dp">
+
+            <View
+                android:layout_width="4dp"
+                android:layout_height="40dp"
+                android:background="#3D8EFF"
+                android:layout_marginEnd="14dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Service Request"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.01"
+                    android:fontFamily="sans-serif-medium"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select a category and fill in details"
+                    android:textColor="#6B8AAF"
+                    android:textSize="13sp"
+                    android:layout_marginTop="2dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="10dp"
+            app:cardBackgroundColor="#112240"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="22dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="16dp">
+
+                    <TextView
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:text="1"
+                        android:textColor="#FFFFFF"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="  CHOOSE SERVICE TYPE"
+                        android:textColor="#3D8EFF"
+                        android:textSize="11sp"
+                        android:letterSpacing="0.10"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif-medium"/>
+                </LinearLayout>
+
+                <!-- Spinner container -->
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    >
+
+                    <Spinner
+                        android:id="@+id/serviceSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingHorizontal="16dp"
+                        android:spinnerMode="dropdown"
+                        android:popupBackground="#1A3050"
+                        />
+                </FrameLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/dynamicCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="10dp"
+            app:cardBackgroundColor="#112240"
+            android:layout_marginBottom="20dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="22dp">
+
+                <!-- Step badge -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="18dp">
+
+                    <TextView
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:text="2"
+                        android:textColor="#FFFFFF"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        />
+
+                    <TextView
+                        android:id="@+id/dynamicCardTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="  COMPLAINT DETAILS"
+                        android:textColor="#3D8EFF"
+                        android:textSize="11sp"
+                        android:letterSpacing="0.10"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif-medium"/>
+                </LinearLayout>
+
+                <!-- ══ HOSTEL COMPLAINT SECTION ══ -->
+                <LinearLayout
+                    android:id="@+id/hostelSection"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Complaint Date"
+                        android:textColor="#8FAAC8"
+                        android:textSize="12sp"
+                        android:layout_marginBottom="8dp"/>
+
+                    <!-- DatePicker inline -->
+                    <DatePicker
+                        android:id="@+id/hostelDatePicker"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:datePickerMode="spinner"
+                        android:calendarViewShown="false"
+
+                        android:layout_marginBottom="18dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Describe Your Issue"
+                        android:textColor="#8FAAC8"
+                        android:textSize="12sp"
+                        android:layout_marginBottom="8dp"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:boxStrokeColor="#2E4A6A"
+                        app:boxBackgroundColor="#0A1628"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="200">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/hostelDescription"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Describe the issue in detail..."
+                            android:inputType="textMultiLine"
+                            android:minLines="4"
+                            android:gravity="top"
+                            android:textColor="#FFFFFF"
+                            android:textColorHint="#4A6A8A"
+                            android:maxLength="200"
+                            android:paddingHorizontal="16dp"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <!-- ══ WIFI ISSUE SECTION ══ -->
+                <LinearLayout
+                    android:id="@+id/wifiSection"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <!-- Priority Switch -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="14dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="#0A1628"
+                        android:layout_marginBottom="20dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:padding="16dp">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Priority Level"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold"/>
+
+                                <TextView
+                                    android:id="@+id/priorityLabel"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Normal — will be handled shortly"
+                                    android:textColor="#6B8AAF"
+                                    android:textSize="12sp"
+                                    android:layout_marginTop="3dp"/>
+                            </LinearLayout>
+
+                            <Switch
+                                android:id="@+id/urgentSwitch"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:thumbTint="#3D8EFF"
+                                android:trackTint="#1A3050"/>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Location / Room No."
+                        android:textColor="#8FAAC8"
+                        android:textSize="12sp"
+                        android:layout_marginBottom="8dp"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:boxStrokeColor="#2E4A6A"
+                        app:boxBackgroundColor="#0A1628"
+
+                        app:startIconTint="#3D8EFF">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/wifiLocation"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="e.g. Block C, Room 204"
+                            android:inputType="textPostalAddress"
+                            android:textColor="#FFFFFF"
+                            android:textColorHint="#4A6A8A"
+                            android:paddingHorizontal="16dp"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <!-- ══ LAB EQUIPMENT SECTION ══ -->
+                <LinearLayout
+                    android:id="@+id/labSection"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Equipment Type"
+                        android:textColor="#8FAAC8"
+                        android:textSize="12sp"
+                        android:layout_marginBottom="12dp"/>
+
+                    <RadioGroup
+                        android:id="@+id/equipmentGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <!-- Projector -->
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="52dp"
+
+                            android:layout_marginBottom="10dp">
+
+                            <RadioButton
+                                android:id="@+id/projectorRadio"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="  📽️  Projector"
+                                android:textColor="#FFFFFF"
+                                android:textSize="15sp"
+                                android:gravity="center_vertical"
+                                android:paddingHorizontal="16dp"
+                                android:buttonTint="#3D8EFF"/>
+                        </FrameLayout>
+
+                        <!-- PC -->
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="52dp"
+
+                            android:layout_marginBottom="10dp">
+
+                            <RadioButton
+                                android:id="@+id/pcRadio"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="  🖥️  PC / Computer"
+                                android:textColor="#FFFFFF"
+                                android:textSize="15sp"
+                                android:gravity="center_vertical"
+                                android:paddingHorizontal="16dp"
+                                android:buttonTint="#3D8EFF"/>
+                        </FrameLayout>
+
+                        <!-- Other -->
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="52dp"
+                            >
+
+                            <RadioButton
+                                android:id="@+id/otherRadio"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="  🔧  Other"
+                                android:textColor="#FFFFFF"
+                                android:textSize="15sp"
+                                android:gravity="center_vertical"
+                                android:paddingHorizontal="16dp"
+                                android:buttonTint="#3D8EFF"/>
+                        </FrameLayout>
+                    </RadioGroup>
+                </LinearLayout>
+
+                <!-- ══ EVENT REGISTRATION SECTION ══ -->
+                <LinearLayout
+                    android:id="@+id/eventSection"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Event Time"
+                        android:textColor="#8FAAC8"
+                        android:textSize="12sp"
+                        android:layout_marginBottom="8dp"/>
+
+                    <TimePicker
+                        android:id="@+id/eventTimePicker"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:timePickerMode="spinner"
+
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="20dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Number of Participants"
+                        android:textColor="#8FAAC8"
+                        android:textSize="12sp"
+                        android:layout_marginBottom="8dp"/>
+
+                    <!-- Participant counter -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        >
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/decrementBtn"
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:text="−"
+                            android:textSize="22sp"
+                            android:textColor="#FFFFFF"
+                            app:backgroundTint="#1A3050"
+                            app:cornerRadius="0dp"
+                            app:elevation="0dp"/>
+
+                        <TextView
+                            android:id="@+id/participantCount"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="1"
+                            android:textColor="#FFFFFF"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:fontFamily="sans-serif-medium"/>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/incrementBtn"
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:text="+"
+                            android:textSize="22sp"
+                            android:textColor="#FFFFFF"
+                            app:backgroundTint="#3D8EFF"
+                            app:cornerRadius="0dp"
+                            app:elevation="0dp"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- ── Submit Button ── -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/submitBtn"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Review &amp; Submit"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:letterSpacing="0.04"
+            app:backgroundTint="#3D8EFF"
+            app:cornerRadius="18dp"
+            app:elevation="8dp"
+            android:fontFamily="sans-serif-medium"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+</ScrollView>
