@@ -14,7 +14,7 @@ import java.util.Calendar;
 
 public class MainActivity2 extends AppCompatActivity {
 
-    // ── Spinner ──
+
     private Spinner serviceSpinner;
 
     // ── Dynamic card + title ──
